@@ -203,7 +203,7 @@
 
             <div class="mt-4 flex flex-col sm:flex-row sm:items-center gap-3">
               <a id="modalDemoBtn" href="#" class="w-full sm:w-auto inline-block px-4 py-2 bg-indigo-600 text-white rounded-md shadow text-center">GitHub</a>
-              <a id="modalCaseBtn" href="#" class="w-full sm:w-auto inline-block px-4 py-2 border rounded-md text-center">Back</a>
+              
             </div>
           </div>
         </div>
@@ -260,7 +260,6 @@
     const modalTag = document.getElementById('modalTag');
     const modalCloseBtn = document.getElementById('modalCloseBtn');
     const modalDemoBtn = document.getElementById('modalDemoBtn');
-    const modalCaseBtn = document.getElementById('modalCaseBtn');
 
     // image zoom overlay elements
     const imgZoomOverlay = document.getElementById('imgZoomOverlay');
@@ -310,8 +309,6 @@
       // demo/case links
       modalDemoBtn.href = demo || '#';
       modalDemoBtn.target = demo && demo !== '#' ? '_blank' : '_self';
-      modalCaseBtn.href = caseUrl || '#';
-      modalCaseBtn.target = caseUrl && caseUrl !== '#' ? '_blank' : '_self';
 
       // inject screenshots (responsive grid)
       removeExtraImgs();
