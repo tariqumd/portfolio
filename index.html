@@ -18,6 +18,10 @@
     #imgZoomOverlay .wrap { max-width: 95vw; max-height: 95vh; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 40px rgba(2,6,23,0.6); }
     #imgZoomOverlay img { display:block; max-width:100%; max-height:100%; height:auto; width:auto; }
     #imgZoomOverlay .closeBtn { position: absolute; top: 18px; right: 18px; background: rgba(255,255,255,0.12); color: #fff; border: none; width:38px; height:38px; border-radius:8px; cursor:pointer; backdrop-filter: blur(4px); }
+
+    /* modal mobile improvements */
+    .modal-inner { -webkit-overflow-scrolling: touch; touch-action: pan-y; }
+    #modalCloseBtn { padding:.35rem; min-width:44px; min-height:44px; }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
@@ -77,113 +81,129 @@
         </div>
 
         <div class="mt-4 center grid sm:grid-cols-2 gap-4">
-          <!-- Card 1 - note data-* attributes used for modal -->
+          <!-- Card 1 -->
           <article class="project-card bg-white rounded-lg p-4 shadow-sm border cursor-pointer"
-         data-title="SoulThread — AI Journaling Chatbot"
-         data-img="soulthread_assets/soulthread.jpeg"
-         data-desc="An intelligent journaling chatbot that helps users reflect, heal, and grow through conversations. Built with React (frontend) and Django (backend), SoulThread lets users message an empathetic AI trained for emotional reflection — merging mental wellness with technology."
-         data-tech="React · Django · REST API · GPT-based LLM Integration · PostgreSQL"
-         data-tag="Product • AI • Mental Wellness"
-         data-demo="https://github.com/tariqumd/soulthread_backend"
-         data-case="#"
-         data-extra-imgs='["soulthread_assets/ss_login.png","soulthread_assets/ss_chat.png"]'>
-          <div class="flex items-start gap-3">
-            <img src="soulthread_assets/soulthread.jpeg" 
-                alt="SoulThread app" class="w-20 h-20 object-contain rounded-md border border-slate-200 p-1 bg-white" data-large="soulthread_assets/soulthread.jpeg">
-            <div>
-              <h4 class="font-semibold">SoulThread — AI Journaling Chatbot</h4>
-              <p class="mt-1 text-sm text-slate-500">A mindful journaling app that talks back — helping users express, reflect, and grow emotionally.</p>
-              <div class="mt-2 text-xs text-slate-400">React · Django · GPT Integration</div>
+                   data-title="SoulThread — AI Journaling Chatbot"
+                   data-img="soulthread_assets/soulthread.jpeg"
+                   data-desc="An intelligent journaling chatbot that helps users reflect, heal, and grow through conversations. Built with React (frontend) and Django (backend), SoulThread lets users message an empathetic AI trained for emotional reflection — merging mental wellness with technology."
+                   data-tech="React · Django · REST API · GPT-based LLM Integration · PostgreSQL"
+                   data-tag="Product • AI • Mental Wellness"
+                   data-demo="https://github.com/tariqumd/soulthread_backend"
+                   data-case="#"
+                   data-extra-imgs='["soulthread_assets/ss_login.png","soulthread_assets/ss_chat.png"]'>
+            <div class="flex items-start gap-3">
+              <img src="soulthread_assets/soulthread.jpeg"
+                   alt="SoulThread app"
+                   class="w-20 h-20 object-contain rounded-md border border-slate-200 p-1 bg-white"
+                   data-large="soulthread_assets/soulthread.jpeg">
+              <div>
+                <h4 class="font-semibold">SoulThread — AI Journaling Chatbot</h4>
+                <p class="mt-1 text-sm text-slate-500">A mindful journaling app that talks back — helping users express, reflect, and grow emotionally.</p>
+                <div class="mt-2 text-xs text-slate-400">React · Django · GPT Integration</div>
+              </div>
             </div>
-          </div>
-        </article>
-        <!-- Card 2 - note data-* attributes used for modal -->
-        <article class="project-card bg-white rounded-lg p-4 shadow-sm border cursor-pointer"
-         data-title="Inventory as a Service (B2B SAAS)"
-         data-img="inventory_assets/iaas_logo.png"
-         data-desc="Subscription-based inventory management SaaS for small-scale retailers to manage stock, sales, and templates tailored for various store types. Built with a Flask backend and Bootstrap frontend."
-         data-tech="Flask · REST · Bootstrap"
-         data-tag="B2B • SAAS"
-         data-demo="https://github.com/tariqumd/inventory_retail_store"
-         data-case="#"
-         data-extra-imgs='["inventory_assets/item_creation.png","inventory_assets/item_stock_summary.png","inventory_assets/sales_page.png","inventory_assets/sales_summary.png"]'>
-          <div class="flex items-start gap-3">
-            <img src="inventory_assets/iaas_logo.png" 
-                alt="Inventory app" class="w-20 h-20 object-contain rounded-md border border-slate-200 p-1 bg-white" data-large="inventory_assets/sales_page.png">
-            <div>
-              <h4 class="font-semibold">Inventory as a Service (B2B SAAS)</h4>
-              <p class="mt-1 text-sm text-slate-500">Subscription-based inventory management SaaS for small-scale retailers to manage stock, sales, and templates tailored for various store types. Built with a Django backend and React frontend.</p>
-              <div class="mt-2 text-xs text-slate-400">Flask • REST • Bootstrap</div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="project-card bg-white rounded-lg p-4 shadow-sm border cursor-pointer"
+                   data-title="Inventory as a Service (B2B SAAS)"
+                   data-img="inventory_assets/iaas_logo.png"
+                   data-desc="Subscription-based inventory management SaaS for small-scale retailers to manage stock, sales, and templates tailored for various store types. Built with a Flask backend and Bootstrap frontend."
+                   data-tech="Flask · REST · Bootstrap"
+                   data-tag="B2B • SAAS"
+                   data-demo="https://github.com/tariqumd/inventory_retail_store"
+                   data-case="#"
+                   data-extra-imgs='["inventory_assets/item_creation.png","inventory_assets/item_stock_summary.png","inventory_assets/sales_page.png","inventory_assets/sales_summary.png"]'>
+            <div class="flex items-start gap-3">
+              <img src="inventory_assets/iaas_logo.png"
+                   alt="Inventory app"
+                   class="w-20 h-20 object-contain rounded-md border border-slate-200 p-1 bg-white"
+                   data-large="inventory_assets/sales_page.png">
+              <div>
+                <h4 class="font-semibold">Inventory as a Service (B2B SAAS)</h4>
+                <p class="mt-1 text-sm text-slate-500">Subscription-based inventory management SaaS for small-scale retailers to manage stock, sales, and templates tailored for various store types.</p>
+                <div class="mt-2 text-xs text-slate-400">Flask • REST • Bootstrap</div>
+              </div>
             </div>
-          </div>
-        </article>
-        <!-- Card 3 - note data-* attributes used for modal -->
-        <article class="project-card bg-white rounded-lg p-4 shadow-sm border cursor-pointer"
-         data-title="Open Outlet (MVP)"
-         data-img="openoutlet/oo_logo.png"
-         data-desc="Open Outlet is a simple yet powerful online store solution designed for small business owners who want to go digital without the technical hassle. It’s fast, secure, and customizable — giving you your own branded storefront, complete with inventory tracking, order management, and easy checkout options. Think of it as your shop, open 24/7, from anywhere."
-         data-tech="Django · REST · React"
-         data-tag="ECOMMERCE"
-         data-demo="#"
-         data-case="#"
-         data-extra-imgs='["openoutlet/openoutlet_home.png"]'>
-          <div class="flex items-start gap-3">
-            <img src="openoutlet/oo_logo.png" 
-                alt="Inventory app" class="w-20 h-20 object-contain rounded-md border border-slate-200 p-1 bg-white" data-large="inventory_assets/sales_page.png">
-            <div>
-              <h4 class="font-semibold">Open Outlet - Ecommerce</h4>
-              <p class="mt-1 text-sm text-slate-500">Open Outlet is a simple yet powerful online store solution designed for small business owners who want to go digital without the technical hassle. It’s fast, secure, and customizable — giving you your own branded storefront, complete with inventory tracking, order management, and easy checkout options. Think of it as your shop, open 24/7, from anywhere.</p>
-              <div class="mt-2 text-xs text-slate-400">Django • REST • React</div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="project-card bg-white rounded-lg p-4 shadow-sm border cursor-pointer"
+                   data-title="Open Outlet (MVP)"
+                   data-img="openoutlet/oo_logo.png"
+                   data-desc="Open Outlet is a simple yet powerful online store solution designed for small business owners who want to go digital without the technical hassle."
+                   data-tech="Django · REST · React"
+                   data-tag="ECOMMERCE"
+                   data-demo="#"
+                   data-case="#"
+                   data-extra-imgs='["openoutlet/openoutlet_home.png"]'>
+            <div class="flex items-start gap-3">
+              <img src="openoutlet/oo_logo.png"
+                   alt="OpenOutlet"
+                   class="w-20 h-20 object-contain rounded-md border border-slate-200 p-1 bg-white"
+                   data-large="openoutlet/openoutlet_home.png">
+              <div>
+                <h4 class="font-semibold">Open Outlet - Ecommerce</h4>
+                <p class="mt-1 text-sm text-slate-500">Simple, customizable storefront with inventory and order management.</p>
+                <div class="mt-2 text-xs text-slate-400">Django • REST • React</div>
+              </div>
             </div>
-          </div>
-        </article>
-        <!-- Card 4 - note data-* attributes used for modal -->
-        <article class="project-card bg-white rounded-lg p-4 shadow-sm border cursor-pointer"
-         data-title="SkillSync -  Your jobsearch Portal(MVP)"
-         data-img="skillsync/ss_logo.png"
-         data-desc="SkillSync is an intuitive job and skill portal designed to simplify hiring and career growth. Candidates can create rich profiles highlighting their skills, certifications, and projects, while employers can post jobs, filter applicants, and get AI-powered matches. It’s more than a job board — it’s a bridge between talent and opportunity, built for the modern workforce."
-         data-tech="Flask · REST · Bootstrap"
-         data-tag="MVP • Web Platform"
-         data-demo="https://github.com/tariqumd/S-J-Portal"
-         data-case="#"
-         data-extra-imgs='["skillsync/ss_login.png", "skillsync/ss_employee_home.png","skillsync/ss_employee_edit.png","skillsync/ssemp_job.png","skillsync/sslist_job.png","skillsync/ss_edit_employer.png"]'>
-          <div class="flex items-start gap-3">
-            <img src="skillsync/ss_logo.png" 
-                alt="Inventory app" class="w-20 h-20 object-contain rounded-md border border-slate-200 p-1 bg-white" data-large="inventory_assets/sales_page.png">
-            <div>
-              <h4 class="font-semibold">SkillSync -  Your jobsearch Portal(MVP)</h4>
-              <p class="mt-1 text-sm text-slate-500">A modern skill-matching and job discovery portal that connects talent with opportunities. SkillSync helps job seekers showcase verified skills and helps employers find the right candidates faster — powered by intelligent matching and clean, mobile-friendly design.</p>
-              <div class="mt-2 text-xs text-slate-400">Flask • REST • Bootstrap</div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="project-card bg-white rounded-lg p-4 shadow-sm border cursor-pointer"
+                   data-title="SkillSync - Your jobsearch Portal (MVP)"
+                   data-img="skillsync/ss_logo.png"
+                   data-desc="SkillSync is an intuitive job and skill portal designed to simplify hiring and career growth."
+                   data-tech="Flask · REST · Bootstrap"
+                   data-tag="MVP • Web Platform"
+                   data-demo="https://github.com/tariqumd/S-J-Portal"
+                   data-case="#"
+                   data-extra-imgs='["skillsync/ss_login.png","skillsync/ss_employee_home.png","skillsync/ss_employee_edit.png","skillsync/ssemp_job.png","skillsync/sslist_job.png","skillsync/ss_edit_employer.png"]'>
+            <div class="flex items-start gap-3">
+              <img src="skillsync/ss_logo.png"
+                   alt="SkillSync"
+                   class="w-20 h-20 object-contain rounded-md border border-slate-200 p-1 bg-white"
+                   data-large="skillsync/ss_login.png">
+              <div>
+                <h4 class="font-semibold">SkillSync - Job Portal</h4>
+                <p class="mt-1 text-sm text-slate-500">Modern skill-matching and job discovery portal with clean mobile-friendly design.</p>
+                <div class="mt-2 text-xs text-slate-400">Flask • REST • Bootstrap</div>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
         </div>
 
         <p class="mt-4 text-sm text-slate-500">Want more? Full case studies available on request — short, non-technical summaries for business owners.</p>
       </section>
 
-      <!-- Modal (hidden by default) -->
-      <div id="projectModal" class="hidden fixed inset-0 z-50 flex items-center justify-center px-4 py-6">
+      <!-- Modal (responsive & scrollable) -->
+      <div id="projectModal" class="hidden fixed inset-0 z-50 flex items-center justify-center px-4 py-6" aria-hidden="true">
         <!-- backdrop -->
         <div id="modalBackdrop" class="absolute inset-0 bg-black/40"></div>
 
-        <div role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="relative max-w-3xl w-full bg-white rounded-xl shadow-2xl overflow-hidden">
-          <div class="p-4 md:p-6">
-            <div class="flex items-start gap-4">
-              <img id="modalImg" src="" alt="project" class="w-36 h-36 object-contain rounded-md border border-slate-200 p-1 bg-white shadow-sm flex-shrink-0" data-large="">
-              <div class="flex-1">
+        <!-- dialog -->
+        <div role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="relative w-full max-w-3xl mx-4 sm:mx-0 bg-white rounded-xl shadow-2xl overflow-hidden">
+          <div class="modal-inner p-4 md:p-6 max-h-[85vh] overflow-auto">
+            <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+              <img id="modalImg" src="" alt="project" class="w-full sm:w-36 h-auto object-contain rounded-md border border-slate-200 p-1 bg-white shadow-sm flex-shrink-0" data-large="">
+              <div class="flex-1 min-w-0">
                 <h4 id="modalTitle" class="text-lg font-semibold">Project title</h4>
                 <div id="modalTag" class="text-xs text-slate-400 mt-1">Tag</div>
                 <p id="modalDesc" class="mt-3 text-sm text-slate-600">Longer description of the project. Replace with details that matter to clients.</p>
                 <div id="modalTech" class="mt-3 text-xs text-slate-500">Tech stack</div>
+
+                <!-- injected screenshots appear here -->
               </div>
-              <div class="ml-4 flex-shrink-0">
+
+              <div class="flex-shrink-0 self-start sm:self-start">
                 <button id="modalCloseBtn" aria-label="Close" class="inline-flex items-center justify-center w-9 h-9 rounded-md bg-slate-100 hover:bg-slate-200">✕</button>
               </div>
             </div>
-            <div class="mt-4">
-              <a id="modalDemoBtn" href="#" class="inline-block px-4 py-2 bg-indigo-600 text-white rounded-md shadow mr-2">GitHub</a>
-              <a id="modalCaseBtn" href="#" class="inline-block px-4 py-2 border rounded-md">Back</a>
+
+            <div class="mt-4 flex flex-col sm:flex-row sm:items-center gap-3">
+              <a id="modalDemoBtn" href="#" class="w-full sm:w-auto inline-block px-4 py-2 bg-indigo-600 text-white rounded-md shadow text-center">GitHub</a>
+              <a id="modalCaseBtn" href="#" class="w-full sm:w-auto inline-block px-4 py-2 border rounded-md text-center">Back</a>
             </div>
           </div>
         </div>
@@ -196,7 +216,7 @@
         <ul class="mt-3 text-sm text-slate-500 space-y-1">
           <li>● 5+ years building Full Stack web and mobile apps</li>
           <li>● Comfortable with end-to-end delivery (design → deploy)</li>
-          <li>● I keep things simple for non-tech stakeholders</li>
+          <li>● I keep things simple for non-technical stakeholders</li>
         </ul>
       </section>
 
@@ -226,188 +246,180 @@
   </div>
 
   <script>
-  // small niceties
-  document.getElementById('year').textContent = new Date().getFullYear();
-  // reveal animation
-  setTimeout(() => document.querySelectorAll('section, header, footer').forEach(el => el.classList.add('show')), 50);
+    // small niceties
+    document.getElementById('year').textContent = new Date().getFullYear();
+    setTimeout(() => document.querySelectorAll('section, header, footer').forEach(el => el.classList.add('show')), 50);
 
-  // Modal logic: open project details when a .project-card is clicked
-  const modal = document.getElementById('projectModal');
-  const modalBackdrop = document.getElementById('modalBackdrop');
-  const modalImg = document.getElementById('modalImg');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalDesc = document.getElementById('modalDesc');
-  const modalTech = document.getElementById('modalTech');
-  const modalTag = document.getElementById('modalTag');
-  const modalCloseBtn = document.getElementById('modalCloseBtn');
-  const modalDemoBtn = document.getElementById('modalDemoBtn');
-  const modalCaseBtn = document.getElementById('modalCaseBtn');
+    // modal elements
+    const modal = document.getElementById('projectModal');
+    const modalBackdrop = document.getElementById('modalBackdrop');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalTech = document.getElementById('modalTech');
+    const modalTag = document.getElementById('modalTag');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const modalDemoBtn = document.getElementById('modalDemoBtn');
+    const modalCaseBtn = document.getElementById('modalCaseBtn');
 
-  // image zoom overlay elements
-  const imgZoomOverlay = document.getElementById('imgZoomOverlay');
-  const imgZoomEl = imgZoomOverlay.querySelector('img');
-  const imgZoomClose = imgZoomOverlay.querySelector('.closeBtn');
+    // image zoom overlay elements
+    const imgZoomOverlay = document.getElementById('imgZoomOverlay');
+    const imgZoomEl = imgZoomOverlay.querySelector('img');
+    const imgZoomClose = imgZoomOverlay.querySelector('.closeBtn');
 
-  // helper: remove previously injected extra images container if present
-  function removeExtraImgs() {
-    const old = modal.querySelector('#modalExtraImgs');
-    if (old) old.remove();
-  }
+    // helper: remove previously injected extra images container if present
+    function removeExtraImgs() {
+      const old = modal.querySelector('#modalExtraImgs');
+      if (old) old.remove();
+    }
 
-  // attach zoom listener to given image element
-  function attachZoom(imgEl) {
-    if (!imgEl) return;
-    // avoid attaching twice
-    if (imgEl._zoomAttached) return;
-    imgEl.style.cursor = 'zoom-in';
-    imgEl.addEventListener('click', (e) => {
-      const src = imgEl.getAttribute('data-large') || imgEl.src || '';
-      if (!src) return;
-      imgZoomEl.src = src;
-      imgZoomOverlay.setAttribute('aria-hidden', 'false');
-      imgZoomOverlay.classList.add('active');
-      imgZoomClose.focus();
-      document.body.style.overflow = 'hidden';
-    });
-    imgEl._zoomAttached = true;
-  }
+    // attach zoom listener to given image element
+    function attachZoom(imgEl) {
+      if (!imgEl) return;
+      if (imgEl._zoomAttached) return;
+      imgEl.style.cursor = 'zoom-in';
+      imgEl.addEventListener('click', (e) => {
+        const src = imgEl.getAttribute('data-large') || imgEl.src || '';
+        if (!src) return;
+        imgZoomEl.src = src;
+        imgZoomOverlay.setAttribute('aria-hidden', 'false');
+        imgZoomOverlay.classList.add('active');
+        imgZoomClose.focus();
+        document.body.style.overflow = 'hidden';
+      });
+      imgEl._zoomAttached = true;
+    }
 
-  function openModalFromCard(card) {
-    const title = card.dataset.title || 'Project';
-    const img = card.dataset.img || '';
-    const desc = card.dataset.desc || '';
-    const tech = card.dataset.tech || '';
-    const tag = card.dataset.tag || '';
-    const demo = card.dataset.demo || '#';
-    const caseUrl = card.dataset.case || '#';
+    function openModalFromCard(card) {
+      const title = card.dataset.title || 'Project';
+      const img = card.dataset.img || '';
+      const desc = card.dataset.desc || '';
+      const tech = card.dataset.tech || '';
+      const tag = card.dataset.tag || '';
+      const demo = card.dataset.demo || '#';
+      const caseUrl = card.dataset.case || '#';
 
-    modalTitle.textContent = title;
-    modalImg.src = img;
-    // set data-large on modal main image to support zoom
-    modalImg.setAttribute('data-large', card.dataset.img || img);
-    modalImg.alt = title;
-    modalDesc.textContent = desc;
-    modalTech.textContent = tech ? `Tech: ${tech}` : '';
-    modalTag.textContent = tag;
+      modalTitle.textContent = title;
+      modalImg.src = img;
+      modalImg.setAttribute('data-large', card.dataset.img || img);
+      modalImg.alt = title;
+      modalDesc.textContent = desc;
+      modalTech.textContent = tech ? `Tech: ${tech}` : '';
+      modalTag.textContent = tag;
 
-    // ensure demo/case open in new tab if provided
-    modalDemoBtn.href = demo || '#';
-    modalDemoBtn.target = demo && demo !== '#' ? '_blank' : '_self';
-    modalCaseBtn.href = caseUrl || '#';
-    modalCaseBtn.target = caseUrl && caseUrl !== '#' ? '_blank' : '_self';
+      // demo/case links
+      modalDemoBtn.href = demo || '#';
+      modalDemoBtn.target = demo && demo !== '#' ? '_blank' : '_self';
+      modalCaseBtn.href = caseUrl || '#';
+      modalCaseBtn.target = caseUrl && caseUrl !== '#' ? '_blank' : '_self';
 
-    // remove old extra images (if any) and then inject new ones if provided
-    removeExtraImgs();
-    if (card.dataset.extraImgs) {
-      try {
-        const extraImgs = JSON.parse(card.dataset.extraImgs);
-        if (Array.isArray(extraImgs) && extraImgs.length) {
-          const imgContainer = document.createElement('div');
-          imgContainer.id = 'modalExtraImgs';
-          imgContainer.className = 'mt-4 grid grid-cols-2 gap-2';
+      // inject screenshots (responsive grid)
+      removeExtraImgs();
+      if (card.dataset.extraImgs) {
+        try {
+          const extraImgs = JSON.parse(card.dataset.extraImgs);
+          if (Array.isArray(extraImgs) && extraImgs.length) {
+            const imgContainer = document.createElement('div');
+            imgContainer.id = 'modalExtraImgs';
+            imgContainer.className = 'mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2';
 
-          extraImgs.forEach(src => {
-            const img = document.createElement('img');
-            img.src = src;
-            // set data-large (if you have hi-res versions, replace same src with hi-res path)
-            img.setAttribute('data-large', src);
-            img.alt = `${title} screenshot`;
-            img.className = 'rounded-md object-contain w-full max-h-48 border border-slate-200 p-1 bg-white shadow-sm';
-            img.loading = 'lazy';
-            // attach zoom listener immediately
-            img.addEventListener('click', () => {
-              const big = img.getAttribute('data-large') || img.src;
-              imgZoomEl.src = big;
-              imgZoomOverlay.setAttribute('aria-hidden', 'false');
-              imgZoomOverlay.classList.add('active');
-              imgZoomClose.focus();
-              document.body.style.overflow = 'hidden';
+            extraImgs.forEach(src => {
+              const img = document.createElement('img');
+              img.src = src;
+              img.setAttribute('data-large', src);
+              img.alt = `${title} screenshot`;
+              img.className = 'rounded-md object-contain w-full max-h-48 border border-slate-200 p-1 bg-white shadow-sm';
+              img.loading = 'lazy';
+              // attach zoom listener immediately
+              img.addEventListener('click', () => {
+                const big = img.getAttribute('data-large') || img.src;
+                imgZoomEl.src = big;
+                imgZoomOverlay.setAttribute('aria-hidden', 'false');
+                imgZoomOverlay.classList.add('active');
+                imgZoomClose.focus();
+                document.body.style.overflow = 'hidden';
+              });
+              imgContainer.appendChild(img);
             });
-            imgContainer.appendChild(img);
-          });
 
-          // append after the main modal content div (the one with padding)
-          const dialogInner = modal.querySelector('[role="dialog"] > div');
-          if (dialogInner) dialogInner.appendChild(imgContainer);
+            // append after the main modal content div (the one with padding)
+            const dialogInner = modal.querySelector('.modal-inner');
+            if (dialogInner) dialogInner.appendChild(imgContainer);
+          }
+        } catch (err) {
+          console.warn('Invalid JSON in data-extra-imgs', err);
         }
-      } catch (err) {
-        console.warn('Invalid JSON in data-extra-imgs', err);
       }
+
+      // attach zoom to modal main image
+      attachZoom(modalImg);
+
+      // show modal
+      modal.classList.remove('hidden');
+      const dialog = modal.querySelector('[role="dialog"]');
+      if (dialog) dialog.focus();
+      document.body.style.overflow = 'hidden';
     }
 
-    // also attach zoom to the modal main image
-    attachZoom(modalImg);
-
-    // show modal
-    modal.classList.remove('hidden');
-    // focus dialog for accessibility
-    const dialog = modal.querySelector('[role="dialog"]');
-    if (dialog) dialog.focus();
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    modal.classList.add('hidden');
-    removeExtraImgs();
-    document.body.style.overflow = '';
-  }
-
-  // wire up initial card thumbnails to be zoomable
-  document.querySelectorAll('.project-card img').forEach(img => attachZoom(img));
-
-  // observe DOM for dynamically added modal extra images (in case)
-  const observer = new MutationObserver((mutations) => {
-    for (const m of mutations) {
-      for (const n of m.addedNodes) {
-        if (!(n instanceof HTMLElement)) continue;
-        if (n.matches && n.matches('#modalExtraImgs img')) attachZoom(n);
-        n.querySelectorAll && n.querySelectorAll('#modalExtraImgs img').forEach(i => attachZoom(i));
-      }
+    function closeModal() {
+      modal.classList.add('hidden');
+      removeExtraImgs();
+      document.body.style.overflow = '';
     }
-  });
-  observer.observe(document.body, { childList: true, subtree: true });
 
-  // click handlers for project cards to open modal
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('click', () => openModalFromCard(card));
-    card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openModalFromCard(card); });
-    // make the article focusable
-    card.setAttribute('tabindex', '0');
-  });
+    // initial thumbnails zoomable
+    document.querySelectorAll('.project-card img').forEach(img => attachZoom(img));
 
-  // modal close handlers
-  modalCloseBtn.addEventListener('click', closeModal);
-  modalBackdrop.addEventListener('click', closeModal);
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      // close zoom overlay first if open
-      if (imgZoomOverlay.classList.contains('active')) {
-        imgZoomOverlay.classList.remove('active');
-        imgZoomOverlay.setAttribute('aria-hidden', 'true');
-        imgZoomEl.src = '';
-        document.body.style.overflow = '';
-        return;
+    // observe dynamically added images
+    const observer = new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        for (const n of m.addedNodes) {
+          if (!(n instanceof HTMLElement)) continue;
+          if (n.matches && n.matches('#modalExtraImgs img')) attachZoom(n);
+          n.querySelectorAll && n.querySelectorAll('#modalExtraImgs img').forEach(i => attachZoom(i));
+        }
       }
-      closeModal();
-    }
-  });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
 
-  // image zoom overlay controls
-  imgZoomClose.addEventListener('click', () => {
-    imgZoomOverlay.classList.remove('active');
-    imgZoomOverlay.setAttribute('aria-hidden', 'true');
-    imgZoomEl.src = '';
-    document.body.style.overflow = '';
-  });
-  imgZoomOverlay.addEventListener('click', (e) => {
-    if (e.target === imgZoomOverlay) {
+    // wire up cards
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', () => openModalFromCard(card));
+      card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openModalFromCard(card); });
+      card.setAttribute('tabindex', '0');
+    });
+
+    // modal close handlers
+    modalCloseBtn.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (imgZoomOverlay.classList.contains('active')) {
+          imgZoomOverlay.classList.remove('active');
+          imgZoomOverlay.setAttribute('aria-hidden', 'true');
+          imgZoomEl.src = '';
+          document.body.style.overflow = '';
+          return;
+        }
+        closeModal();
+      }
+    });
+
+    // image zoom overlay controls
+    imgZoomClose.addEventListener('click', () => {
       imgZoomOverlay.classList.remove('active');
       imgZoomOverlay.setAttribute('aria-hidden', 'true');
       imgZoomEl.src = '';
       document.body.style.overflow = '';
-    }
-  });
-
+    });
+    imgZoomOverlay.addEventListener('click', (e) => {
+      if (e.target === imgZoomOverlay) {
+        imgZoomOverlay.classList.remove('active');
+        imgZoomOverlay.setAttribute('aria-hidden', 'true');
+        imgZoomEl.src = '';
+        document.body.style.overflow = '';
+      }
+    });
   </script>
 </body>
 </html>
