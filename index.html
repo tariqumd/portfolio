@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tariq Mohamed— Portfolio</title>
+  <link rel="icon" type="image/png" href="titleicon.png">
+  <meta name="description" content="Tariq Mohamed — Portfolio / visiting card." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* small tweak for smooth-ish entrance */
+    .reveal { transform: translateY(6px); opacity: 0; transition: all .45s ease; }
+    .reveal.show { transform: translateY(0); opacity: 1; }
+
+    /* image zoom overlay styles */
+    #imgZoomOverlay { position: fixed; inset: 0; display: none; z-index: 1200; align-items: center; justify-content: center; background: rgba(0,0,0,0.85); }
+    #imgZoomOverlay.active { display: flex; }
+    #imgZoomOverlay .wrap { max-width: 95vw; max-height: 95vh; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 40px rgba(2,6,23,0.6); }
+    #imgZoomOverlay img { display:block; max-width:100%; max-height:100%; height:auto; width:auto; }
+    #imgZoomOverlay .closeBtn { position: absolute; top: 18px; right: 18px; background: rgba(255,255,255,0.12); color: #fff; border: none; width:38px; height:38px; border-radius:8px; cursor:pointer; backdrop-filter: blur(4px); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+  <div class="min-h-screen flex items-center justify-center p-6">
+    <main class="max-w-3xl w-full bg-white rounded-2xl shadow-xl ring-1 ring-slate-200 overflow-hidden">
+      <!-- Header -->
+      <header class="p-6 md:p-8 flex items-center gap-4">
+        <div>
+          <h1 class="text-2xl font-extrabold leading-tight">Tariq Mohamed</h1>
+          <p class="text-sm text-slate-500 mt-1">Product-Focused Software Architect — Web, Mobile & Products</p>
+          <p class="text-sm text-slate-500 mt-1">Backend & Data Engineering Specialist</p>
+        </div>
+        <div class="ml-auto text-sm space-x-3 hidden sm:flex">
+          <a href="#work" class="text-slate-600 hover:underline">Work</a>
+          <a href="#about" class="text-slate-600 hover:underline">About</a>
+          <a href="#contact" class="text-slate-600 hover:underline">Contact</a>
+        </div>
+      </header>
+
+      <!-- Hero / Quick details -->
+      <section class="p-6 md:p-8 border-t border-slate-100 grid md:grid-cols-3 gap-6 items-center">
+        <div class="md:col-span-2">
+          <h2 class="text-3xl font-bold">I help brands and startups bring their ideas to life.</h2>
+          <p class="mt-3 text-slate-600">I build digital systems that think — smart websites, scalable apps, and data architectures that turn chaos into clarity.
+    Whether it’s a product MVP or a business platform, I make tech feel effortless and human.</p>
+
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a href="mailto:doodwhocodes@gmail.com" class="inline-block px-4 py-2 bg-indigo-600 text-white rounded-md shadow mr-2">✉️ Email</a>
+            <a href="https://wa.me/917092339606" class="inline-block px-4 py-2 bg-indigo-600 text-white rounded-md shadow mr-2">💬 WhatsApp</a>
+            <a href="resume.pdf" class="inline-block px-4 py-2 bg-indigo-600 text-white rounded-md shadow mr-2">📄 Resume</a>
+          </div>
+
+          <dl class="mt-6 grid grid-cols-2 gap-4 text-sm text-slate-500">
+            <div><dt class="font-medium text-slate-700">Stack</dt><dd>Python · Django · Flask · React · ReactNative · Tailwind · Bootstrap</dd></div>
+            <div><dt class="font-medium text-slate-700">Deploy/CI-CD</dt><dd>AWS · Netlify · Jenkins · GIT </dd></div>
+            <div><dt class="font-medium text-slate-700">Availability</dt><dd>Freelance / Short-term</dd></div>
+            <div><dt class="font-medium text-slate-700">Location</dt><dd>Bangalore, India</dd></div>
+          </dl>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-sm bg-slate-100 p-4 flex flex-col items-center">
+          <!-- Replace with your photo or logo -->
+          <img src="prof_pic.jpeg"
+               alt="Tariq" class="w-32 h-32 rounded-lg object-cover shadow" />
+          <div class="mt-3 text-center">
+            <div class="font-semibold">Tariq Mohamed</div>
+            <div class="text-xs text-slate-500">Product-Focused Software Architect</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work / Projects -->
+      <section id="work" class="p-6 md:p-8 border-t border-slate-100">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-semibold">Projects</h3>
+          <span class="text-sm text-slate-400">Few highlights</span>
+        </div>
+
+        <div class="mt-4 center grid sm:grid-cols-2 gap-4">
+          <!-- Card 1 - note data-* attributes used for modal -->
+          <article class="project-card bg-white rounded-lg p-4 shadow-sm border cursor-pointer"
+         data-title="SoulThread — AI Journaling Chatbot"
+         data-img="soulthread_assets/soulthread.jpeg"
+         data-desc="An intelligent journaling chatbot that helps users reflect, heal, and grow through conversations. Built with React (frontend) and Django (backend), SoulThread lets users message an empathetic AI trained for emotional reflection — merging mental wellness with technology."
+         data-tech="React · Django · REST API · GPT-based LLM Integration · PostgreSQL"
+         data-tag="Product • AI • Mental Wellness"
+         data-demo="https://github.com/tariqumd/soulthread_backend"
+         data-case="#"
+         data-extra-imgs='["soulthread_assets/ss_login.png","soulthread_assets/ss_chat.png"]'>
+          <div class="flex items-start gap-3">
+            <img src="soulthread_assets/soulthread.jpeg" 
+                alt="SoulThread app" class="w-20 h-20 object-contain rounded-md border border-slate-200 p-1 bg-white" data-large="soulthread_assets/soulthread.jpeg">
+            <div>
+              <h4 class="font-semibold">SoulThread — AI Journaling Chatbot</h4>
+              <p class="mt-1 text-sm text-slate-500">A mindful journaling app that talks back — helping users express, reflect, and grow emotionally.</p>
+              <div class="mt-2 text-xs text-slate-400">React · Django · GPT Integration</div>
+            </div>
+          </div>
+        </article>
+        <!-- Card 2 - note data-* attributes used for modal -->
+        <article class="project-card bg-white rounded-lg p-4 shadow-sm border cursor-pointer"
+         data-title="Inventory as a Service (B2B SAAS)"
+         data-img="inventory_assets/iaas_logo.png"
+         data-desc="Subscription-based inventory management SaaS for small-scale retailers to manage stock, sales, and templates tailored for various store types. Built with a Flask backend and Bootstrap frontend."
+         data-tech="Flask · REST · Bootstrap"
+         data-tag="B2B • SAAS"
+         data-demo="https://github.com/tariqumd/inventory_retail_store"
+         data-case="#"
+         data-extra-imgs='["inventory_assets/item_creation.png","inventory_assets/item_stock_summary.png","inventory_assets/sales_page.png","inventory_assets/sales_summary.png"]'>
+          <div class="flex items-start gap-3">
+            <img src="inventory_assets/iaas_logo.png" 
+                alt="Inventory app" class="w-20 h-20 object-contain rounded-md border border-slate-200 p-1 bg-white" data-large="inventory_assets/sales_page.png">
+            <div>
+              <h4 class="font-semibold">Inventory as a Service (B2B SAAS)</h4>
+              <p class="mt-1 text-sm text-slate-500">Subscription-based inventory management SaaS for small-scale retailers to manage stock, sales, and templates tailored for various store types. Built with a Django backend and React frontend.</p>
+              <div class="mt-2 text-xs text-slate-400">Flask • REST • Bootstrap</div>
+            </div>
+          </div>
+        </article>
+        <!-- Card 3 - note data-* attributes used for modal -->
+        <article class="project-card bg-white rounded-lg p-4 shadow-sm border cursor-pointer"
+         data-title="Open Outlet (MVP)"
+         data-img="openoutlet/oo_logo.png"
+         data-desc="Open Outlet is a simple yet powerful online store solution designed for small business owners who want to go digital without the technical hassle. It’s fast, secure, and customizable — giving you your own branded storefront, complete with inventory tracking, order management, and easy checkout options. Think of it as your shop, open 24/7, from anywhere."
+         data-tech="Django · REST · React"
+         data-tag="ECOMMERCE"
+         data-demo="#"
+         data-case="#"
+         data-extra-imgs='["openoutlet/openoutlet_home.png"]'>
+          <div class="flex items-start gap-3">
+            <img src="openoutlet/oo_logo.png" 
+                alt="Inventory app" class="w-20 h-20 object-contain rounded-md border border-slate-200 p-1 bg-white" data-large="inventory_assets/sales_page.png">
+            <div>
+              <h4 class="font-semibold">Open Outlet - Ecommerce</h4>
+              <p class="mt-1 text-sm text-slate-500">Open Outlet is a simple yet powerful online store solution designed for small business owners who want to go digital without the technical hassle. It’s fast, secure, and customizable — giving you your own branded storefront, complete with inventory tracking, order management, and easy checkout options. Think of it as your shop, open 24/7, from anywhere.</p>
+              <div class="mt-2 text-xs text-slate-400">Django • REST • React</div>
+            </div>
+          </div>
+        </article>
+        <!-- Card 4 - note data-* attributes used for modal -->
+        <article class="project-card bg-white rounded-lg p-4 shadow-sm border cursor-pointer"
+         data-title="SkillSync -  Your jobsearch Portal(MVP)"
+         data-img="skillsync/ss_logo.png"
+         data-desc="SkillSync is an intuitive job and skill portal designed to simplify hiring and career growth. Candidates can create rich profiles highlighting their skills, certifications, and projects, while employers can post jobs, filter applicants, and get AI-powered matches. It’s more than a job board — it’s a bridge between talent and opportunity, built for the modern workforce."
+         data-tech="Flask · REST · Bootstrap"
+         data-tag="MVP • Web Platform"
+         data-demo="https://github.com/tariqumd/S-J-Portal"
+         data-case="#"
+         data-extra-imgs='["skillsync/ss_login.png", "skillsync/ss_employee_home.png","skillsync/ss_employee_edit.png","skillsync/ssemp_job.png","skillsync/sslist_job.png","skillsync/ss_edit_employer.png"]'>
+          <div class="flex items-start gap-3">
+            <img src="skillsync/ss_logo.png" 
+                alt="Inventory app" class="w-20 h-20 object-contain rounded-md border border-slate-200 p-1 bg-white" data-large="inventory_assets/sales_page.png">
+            <div>
+              <h4 class="font-semibold">SkillSync -  Your jobsearch Portal(MVP)</h4>
+              <p class="mt-1 text-sm text-slate-500">A modern skill-matching and job discovery portal that connects talent with opportunities. SkillSync helps job seekers showcase verified skills and helps employers find the right candidates faster — powered by intelligent matching and clean, mobile-friendly design.</p>
+              <div class="mt-2 text-xs text-slate-400">Flask • REST • Bootstrap</div>
+            </div>
+          </div>
+        </article>
+        </div>
+
+        <p class="mt-4 text-sm text-slate-500">Want more? Full case studies available on request — short, non-technical summaries for business owners.</p>
+      </section>
+
+      <!-- Modal (hidden by default) -->
+      <div id="projectModal" class="hidden fixed inset-0 z-50 flex items-center justify-center px-4 py-6">
+        <!-- backdrop -->
+        <div id="modalBackdrop" class="absolute inset-0 bg-black/40"></div>
+
+        <div role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="relative max-w-3xl w-full bg-white rounded-xl shadow-2xl overflow-hidden">
+          <div class="p-4 md:p-6">
+            <div class="flex items-start gap-4">
+              <img id="modalImg" src="" alt="project" class="w-36 h-36 object-contain rounded-md border border-slate-200 p-1 bg-white shadow-sm flex-shrink-0" data-large="">
+              <div class="flex-1">
+                <h4 id="modalTitle" class="text-lg font-semibold">Project title</h4>
+                <div id="modalTag" class="text-xs text-slate-400 mt-1">Tag</div>
+                <p id="modalDesc" class="mt-3 text-sm text-slate-600">Longer description of the project. Replace with details that matter to clients.</p>
+                <div id="modalTech" class="mt-3 text-xs text-slate-500">Tech stack</div>
+              </div>
+              <div class="ml-4 flex-shrink-0">
+                <button id="modalCloseBtn" aria-label="Close" class="inline-flex items-center justify-center w-9 h-9 rounded-md bg-slate-100 hover:bg-slate-200">✕</button>
+              </div>
+            </div>
+            <div class="mt-4">
+              <a id="modalDemoBtn" href="#" class="inline-block px-4 py-2 bg-indigo-600 text-white rounded-md shadow mr-2">GitHub</a>
+              <a id="modalCaseBtn" href="#" class="inline-block px-4 py-2 border rounded-md">Back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About -->
+      <section id="about" class="p-6 md:p-8 border-t border-slate-100 bg-gradient-to-b from-white to-slate-50">
+        <h3 class="text-lg font-semibold">About me</h3>
+        <p class="mt-3 text-slate-600">I focus on practical solutions: fast iteration, clear UX, and backend reliability. I’ve shipped product features in insurance, ad-tech, and small B2B apps.</p>
+        <ul class="mt-3 text-sm text-slate-500 space-y-1">
+          <li>● 5+ years building Full Stack web and mobile apps</li>
+          <li>● Comfortable with end-to-end delivery (design → deploy)</li>
+          <li>● I keep things simple for non-tech stakeholders</li>
+        </ul>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="p-6 md:p-8 border-t border-slate-100">
+        <h3 class="text-lg font-semibold">Contact</h3>
+        <p class="mt-2 text-sm text-slate-500">If your goal is one clean visiting page, a quick landing, or a small app — say hi.</p>
+
+        <div class="mt-4 flex flex-col sm:flex-row gap-3">
+          <a href="mailto:mohamed.tariq46@gmailcom" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-indigo-600 text-white rounded-md shadow">Email — mohamed.tariq46@gmail.com</a>
+          <a href="tel:+917092339606" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 border rounded-md">Call / WhatsApp</a>
+        </div>
+
+        <p class="mt-4 text-xs text-slate-400">Typical turnaround: a polished visiting site in 2–6 hours (content ready).</p>
+      </section>
+
+      <footer class="p-4 text-center text-xs text-slate-400 border-t border-slate-100">
+        © <span id="year"></span> Tariq — <a href="https://github.com/tariqumd" class="hover:underline">GitHub</a> • <a href="https://www.linkedin.com/in/tariqumd/" class="hover:underline">LinkedIn</a>
+      </footer>
+    </main>
+  </div>
+
+  <!-- IMAGE ZOOM OVERLAY -->
+  <div id="imgZoomOverlay" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <button class="closeBtn" aria-label="Close image">✕</button>
+    <div class="wrap"><img src="" alt="Zoomed image" /></div>
+  </div>
+
+  <script>
+  // small niceties
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // reveal animation
+  setTimeout(() => document.querySelectorAll('section, header, footer').forEach(el => el.classList.add('show')), 50);
+
+  // Modal logic: open project details when a .project-card is clicked
+  const modal = document.getElementById('projectModal');
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalImg = document.getElementById('modalImg');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalTech = document.getElementById('modalTech');
+  const modalTag = document.getElementById('modalTag');
+  const modalCloseBtn = document.getElementById('modalCloseBtn');
+  const modalDemoBtn = document.getElementById('modalDemoBtn');
+  const modalCaseBtn = document.getElementById('modalCaseBtn');
+
+  // image zoom overlay elements
+  const imgZoomOverlay = document.getElementById('imgZoomOverlay');
+  const imgZoomEl = imgZoomOverlay.querySelector('img');
+  const imgZoomClose = imgZoomOverlay.querySelector('.closeBtn');
+
+  // helper: remove previously injected extra images container if present
+  function removeExtraImgs() {
+    const old = modal.querySelector('#modalExtraImgs');
+    if (old) old.remove();
+  }
+
+  // attach zoom listener to given image element
+  function attachZoom(imgEl) {
+    if (!imgEl) return;
+    // avoid attaching twice
+    if (imgEl._zoomAttached) return;
+    imgEl.style.cursor = 'zoom-in';
+    imgEl.addEventListener('click', (e) => {
+      const src = imgEl.getAttribute('data-large') || imgEl.src || '';
+      if (!src) return;
+      imgZoomEl.src = src;
+      imgZoomOverlay.setAttribute('aria-hidden', 'false');
+      imgZoomOverlay.classList.add('active');
+      imgZoomClose.focus();
+      document.body.style.overflow = 'hidden';
+    });
+    imgEl._zoomAttached = true;
+  }
+
+  function openModalFromCard(card) {
+    const title = card.dataset.title || 'Project';
+    const img = card.dataset.img || '';
+    const desc = card.dataset.desc || '';
+    const tech = card.dataset.tech || '';
+    const tag = card.dataset.tag || '';
+    const demo = card.dataset.demo || '#';
+    const caseUrl = card.dataset.case || '#';
+
+    modalTitle.textContent = title;
+    modalImg.src = img;
+    // set data-large on modal main image to support zoom
+    modalImg.setAttribute('data-large', card.dataset.img || img);
+    modalImg.alt = title;
+    modalDesc.textContent = desc;
+    modalTech.textContent = tech ? `Tech: ${tech}` : '';
+    modalTag.textContent = tag;
+
+    // ensure demo/case open in new tab if provided
+    modalDemoBtn.href = demo || '#';
+    modalDemoBtn.target = demo && demo !== '#' ? '_blank' : '_self';
+    modalCaseBtn.href = caseUrl || '#';
+    modalCaseBtn.target = caseUrl && caseUrl !== '#' ? '_blank' : '_self';
+
+    // remove old extra images (if any) and then inject new ones if provided
+    removeExtraImgs();
+    if (card.dataset.extraImgs) {
+      try {
+        const extraImgs = JSON.parse(card.dataset.extraImgs);
+        if (Array.isArray(extraImgs) && extraImgs.length) {
+          const imgContainer = document.createElement('div');
+          imgContainer.id = 'modalExtraImgs';
+          imgContainer.className = 'mt-4 grid grid-cols-2 gap-2';
+
+          extraImgs.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            // set data-large (if you have hi-res versions, replace same src with hi-res path)
+            img.setAttribute('data-large', src);
+            img.alt = `${title} screenshot`;
+            img.className = 'rounded-md object-contain w-full max-h-48 border border-slate-200 p-1 bg-white shadow-sm';
+            img.loading = 'lazy';
+            // attach zoom listener immediately
+            img.addEventListener('click', () => {
+              const big = img.getAttribute('data-large') || img.src;
+              imgZoomEl.src = big;
+              imgZoomOverlay.setAttribute('aria-hidden', 'false');
+              imgZoomOverlay.classList.add('active');
+              imgZoomClose.focus();
+              document.body.style.overflow = 'hidden';
+            });
+            imgContainer.appendChild(img);
+          });
+
+          // append after the main modal content div (the one with padding)
+          const dialogInner = modal.querySelector('[role="dialog"] > div');
+          if (dialogInner) dialogInner.appendChild(imgContainer);
+        }
+      } catch (err) {
+        console.warn('Invalid JSON in data-extra-imgs', err);
+      }
+    }
+
+    // also attach zoom to the modal main image
+    attachZoom(modalImg);
+
+    // show modal
+    modal.classList.remove('hidden');
+    // focus dialog for accessibility
+    const dialog = modal.querySelector('[role="dialog"]');
+    if (dialog) dialog.focus();
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    removeExtraImgs();
+    document.body.style.overflow = '';
+  }
+
+  // wire up initial card thumbnails to be zoomable
+  document.querySelectorAll('.project-card img').forEach(img => attachZoom(img));
+
+  // observe DOM for dynamically added modal extra images (in case)
+  const observer = new MutationObserver((mutations) => {
+    for (const m of mutations) {
+      for (const n of m.addedNodes) {
+        if (!(n instanceof HTMLElement)) continue;
+        if (n.matches && n.matches('#modalExtraImgs img')) attachZoom(n);
+        n.querySelectorAll && n.querySelectorAll('#modalExtraImgs img').forEach(i => attachZoom(i));
+      }
+    }
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  // click handlers for project cards to open modal
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => openModalFromCard(card));
+    card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openModalFromCard(card); });
+    // make the article focusable
+    card.setAttribute('tabindex', '0');
+  });
+
+  // modal close handlers
+  modalCloseBtn.addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', closeModal);
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      // close zoom overlay first if open
+      if (imgZoomOverlay.classList.contains('active')) {
+        imgZoomOverlay.classList.remove('active');
+        imgZoomOverlay.setAttribute('aria-hidden', 'true');
+        imgZoomEl.src = '';
+        document.body.style.overflow = '';
+        return;
+      }
+      closeModal();
+    }
+  });
+
+  // image zoom overlay controls
+  imgZoomClose.addEventListener('click', () => {
+    imgZoomOverlay.classList.remove('active');
+    imgZoomOverlay.setAttribute('aria-hidden', 'true');
+    imgZoomEl.src = '';
+    document.body.style.overflow = '';
+  });
+  imgZoomOverlay.addEventListener('click', (e) => {
+    if (e.target === imgZoomOverlay) {
+      imgZoomOverlay.classList.remove('active');
+      imgZoomOverlay.setAttribute('aria-hidden', 'true');
+      imgZoomEl.src = '';
+      document.body.style.overflow = '';
+    }
+  });
+
+  </script>
+</body>
+</html>
